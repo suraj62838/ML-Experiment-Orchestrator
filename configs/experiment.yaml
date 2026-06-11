@@ -1,0 +1,22 @@
+data:
+  filepath: "data/sample.csv"
+  target_col: "target"
+
+cleaning:
+  fill_nulls: "mean"       # Options: mean | median | mode | drop
+  drop_duplicates: true
+  fix_dtypes: true
+
+splitting:
+  test_size: 0.2           # Fraction of full dataset for test set
+  val_size: 0.1            # Fraction of full dataset for validation set
+  random_seed: 42
+  stratify: true           # Set false for regression tasks
+
+model:
+  type: "logistic_regression"   # See src/models/trainer.py for all options
+  params: {}                    # Extra kwargs forwarded to the sklearn constructor
+  save_path: "outputs/model.joblib"
+
+evaluation:
+  report_path: "outputs/report.json"
