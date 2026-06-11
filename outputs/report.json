@@ -1,17 +1,17 @@
 {
   "task": "classification",
-  "accuracy": 0.516667,
-  "f1_weighted": 0.455129,
-  "precision_weighted": 0.477,
-  "recall_weighted": 0.516667,
+  "accuracy": 0.383333,
+  "f1_weighted": 0.383162,
+  "precision_weighted": 0.383204,
+  "recall_weighted": 0.383333,
   "confusion_matrix": [
     [
-      27,
-      6
+      12,
+      18
     ],
     [
-      23,
-      4
+      19,
+      11
     ]
   ]
 }

@@ -2,21 +2,39 @@ data:
   filepath: "data/sample.csv"
   target_col: "target"
 
-cleaning:
-  fill_nulls: "mean"       # Options: mean | median | mode | drop
-  drop_duplicates: true
-  fix_dtypes: true
+# ── Pipeline ─────────────────────────────────────────────────────────────────
+# Steps are applied in order after the train/val/test split.
+# IMPORTANT: fit is called on X_train only; transform is applied to all splits.
+pipeline:
+  steps:
+    - type: drop_columns
+      cols: ["id"]                       # Remove surrogate key
 
+    - type: mean_impute
+      cols: "all_numeric"               # Fill numeric nulls with column mean
+
+    - type: mode_impute
+      cols: "all_categorical"           # Fill categorical nulls with column mode
+
+    - type: onehot_encode
+      cols: ["gender", "category"]      # One-hot encode categorical features
+
+    - type: standard_scale
+      cols: "all_numeric"               # Standardise all remaining numeric cols
+
+# ── Splitting ─────────────────────────────────────────────────────────────────
 splitting:
   test_size: 0.2           # Fraction of full dataset for test set
   val_size: 0.1            # Fraction of full dataset for validation set
   random_seed: 42
   stratify: true           # Set false for regression tasks
 
+# ── Model ─────────────────────────────────────────────────────────────────────
 model:
   type: "logistic_regression"   # See src/models/trainer.py for all options
   params: {}                    # Extra kwargs forwarded to the sklearn constructor
   save_path: "outputs/model.joblib"
 
+# ── Evaluation ────────────────────────────────────────────────────────────────
 evaluation:
   report_path: "outputs/report.json"
