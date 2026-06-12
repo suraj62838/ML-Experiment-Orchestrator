@@ -25,7 +25,13 @@ would constitute data leakage and invalidate the evaluation.
 import argparse
 import sys
 import os
+import uuid
+import time
+import joblib
+import shutil
 from pathlib import Path
+from tabulate import tabulate
+from datetime import datetime
 
 # ── Ensure project root is on the Python path so `src` is importable ─────────
 PROJECT_ROOT = Path(__file__).parent
@@ -41,6 +47,8 @@ from src.data.splitter import DataSplitter
 from src.models.trainer import ModelTrainer
 from src.models.evaluator import Evaluator
 from src.pipeline.engine import PipelineEngine
+from src.tracking import ExperimentTracker, ModelRegistry, RunRecord
+from src.tuning import HyperparameterTuner
 
 logger = get_logger(__name__)
 
@@ -134,19 +142,38 @@ def _print_metrics_table(metrics: dict) -> None:
 # Pipeline
 # ─────────────────────────────────────────────────────────────────────────────
 
-def run_pipeline(config: dict) -> dict:
+def run_pipeline(
+    config: dict,
+    tune: bool = False,
+    n_trials: int = 20,
+    metric: str = "f1",
+    promote: bool = False,
+    tags: dict = None,
+) -> dict:
     """Execute the full ML pipeline defined by *config*.
 
     Parameters
     ----------
     config : dict
         Parsed experiment configuration (see ``configs/experiment.yaml``).
+    tune : bool
+        Whether to run hyperparameter tuning.
+    n_trials : int
+        Number of hyperparameter search trials.
+    metric : str
+        The target metric to optimize during tuning.
+    promote : bool
+        Whether to auto-promote the resulting model as champion.
+    tags : dict
+        User-defined metadata tags to log with this run.
 
     Returns
     -------
     dict
         The evaluation metrics produced by :class:`~src.models.evaluator.Evaluator`.
     """
+    start_time = time.time()
+
     # ── 1. Resolve config sections ──────────────────────────────────────────
     data_cfg = config["data"]
     pipeline_cfg = config.get("pipeline", {})
@@ -197,23 +224,120 @@ def run_pipeline(config: dict) -> dict:
     # ── 7. Print pipeline summary ───────────────────────────────────────────
     engine.print_summary(X_train, X_train_t)
 
-    # ── 8. Train model ──────────────────────────────────────────────────────
-    logger.info("-- Step 5/7: Training model --")
-    trainer = ModelTrainer(
-        model_type=model_cfg["type"],
-        model_params=model_cfg.get("params", {}),
-    )
-    trainer.fit(X_train_t, y_train)
-    trainer.save(model_cfg["save_path"])
+    # ── Initialize Tracking/Registry ───────────────────────────────────────
+    tracking_cfg = config.get("tracking", {})
+    db_path = tracking_cfg.get("db_path", "outputs/experiments.db")
+    tracker = ExperimentTracker(db_path=db_path)
+    registry = ModelRegistry(tracker=tracker)
 
-    # ── 9. Evaluate model ───────────────────────────────────────────────────
+    best_model = None
+    best_params = {}
+    best_record = None
+
+    if tune:
+        logger.info("-- Step 5/7: Tuning hyperparameters --")
+        tuner = HyperparameterTuner(
+            config=config,
+            n_trials=n_trials,
+            metric=metric,
+            tracker=tracker,
+        )
+        best_record = tuner.tune(
+            X_train_t,
+            y_train,
+            X_val_t,
+            y_val,
+            pipeline_summary=engine.get_steps_summary(),
+        )
+        best_params = tuner.study.best_trial.params
+        best_model = joblib.load(best_record.model_path)
+
+        # Print study summary table
+        study_df = tuner.get_study_summary()
+        print("\n===== HYPERPARAMETER TUNING STUDY SUMMARY =====")
+        print(tabulate(study_df, headers="keys", tablefmt="grid", showindex=False))
+        print("================================================\n")
+    else:
+        logger.info("-- Step 5/7: Training model --")
+        best_params = model_cfg.get("params", {})
+        trainer = ModelTrainer(
+            model_type=model_cfg["type"],
+            model_params=best_params,
+        )
+        trainer.fit(X_train_t, y_train)
+        best_model = trainer.model
+
+    # ── 8. Evaluate model ───────────────────────────────────────────────────
     logger.info("-- Step 6/7: Evaluating model --")
     evaluator = Evaluator()
-    metrics = evaluator.evaluate(trainer.model, X_test_t, y_test)
+    metrics = evaluator.evaluate(best_model, X_test_t, y_test)
 
-    # ── 10. Save report ─────────────────────────────────────────────────────
+    # ── 9. Save report ─────────────────────────────────────────────────────
     logger.info("-- Step 7/7: Saving report --")
     evaluator.save_report(metrics, eval_cfg["report_path"])
+
+    # ── 10. Persist Final Run Record and Artifacts ──────────────────────────
+    duration_seconds = time.time() - start_time
+    final_run_id = str(uuid.uuid4())
+    final_model_path = f"outputs/model_{final_run_id}.joblib"
+
+    if tune and best_record:
+        shutil.copy2(best_record.model_path, final_model_path)
+    else:
+        trainer.save(final_model_path)
+
+    final_config = config.copy()
+    final_config["model"] = final_config.get("model", {}).copy()
+    final_config["model"]["params"] = best_params
+
+    # Mark the tags
+    final_tags = {"type": "final"}
+    if tags:
+        final_tags.update(tags)
+
+    final_record = RunRecord(
+        run_id=final_run_id,
+        timestamp=datetime.now().isoformat(),
+        config=final_config,
+        pipeline_summary=engine.get_steps_summary(),
+        metrics=metrics,
+        model_type=model_cfg["type"],
+        model_path=final_model_path,
+        dataset_path=filepath,
+        train_rows=len(X_train),
+        test_rows=len(X_test),
+        duration_seconds=duration_seconds,
+        tags=final_tags,
+        is_champion=False,
+    )
+
+    tracker.log_run(final_record)
+
+    # Print summary block
+    metric_name = "F1"
+    metric_val = 0.0
+    if "f1_weighted" in metrics:
+        metric_name = "F1"
+        metric_val = metrics["f1_weighted"]
+    elif "rmse" in metrics:
+        metric_name = "RMSE"
+        metric_val = metrics["rmse"]
+    else:
+        for k, v in metrics.items():
+            if k not in ["task", "confusion_matrix"]:
+                metric_name = k.upper()
+                metric_val = v
+                break
+
+    print("================================")
+    print(f"RUN ID : {final_run_id[:8]}")
+    print(f"MODEL  : {model_cfg['type']}")
+    print(f"{metric_name:<7}: {metric_val:.4f}" if isinstance(metric_val, float) else f"{metric_name:<7}: {metric_val}")
+    print(f"SAVED  : {final_model_path}")
+    print("================================")
+
+    if promote:
+        registry.promote(final_run_id)
 
     return metrics
 
@@ -245,6 +369,34 @@ def _parse_args(argv=None) -> argparse.Namespace:
         metavar="PATH",
         help="Path to the experiment YAML configuration file.",
     )
+    parser.add_argument(
+        "--tune",
+        action="store_true",
+        help="Enable hyperparameter tuning mode.",
+    )
+    parser.add_argument(
+        "--n-trials",
+        type=int,
+        default=20,
+        help="Number of tuning trials (default: 20).",
+    )
+    parser.add_argument(
+        "--metric",
+        type=str,
+        default="f1",
+        help="Metric to optimize (default: f1).",
+    )
+    parser.add_argument(
+        "--promote",
+        action="store_true",
+        help="Auto-promote the best run as champion.",
+    )
+    parser.add_argument(
+        "--tag",
+        action="append",
+        metavar="KEY=VALUE",
+        help="Add a tag to this run (can be repeated).",
+    )
     return parser.parse_args(argv)
 
 
@@ -256,7 +408,24 @@ def main(argv=None) -> None:
     config = load_config(args.config)
     logger.info("Configuration loaded successfully.")
 
-    metrics = run_pipeline(config)
+    # Parse tags list from CLI
+    tags = {}
+    if args.tag:
+        for tag_str in args.tag:
+            if "=" in tag_str:
+                k, v = tag_str.split("=", 1)
+                tags[k.strip()] = v.strip()
+            else:
+                tags[tag_str.strip()] = ""
+
+    metrics = run_pipeline(
+        config=config,
+        tune=args.tune,
+        n_trials=args.n_trials,
+        metric=args.metric,
+        promote=args.promote,
+        tags=tags,
+    )
     _print_metrics_table(metrics)
 
 

@@ -1,0 +1,83 @@
+{
+  "run_id": "0926dabd-54ac-4f12-a2c7-1b6e984febcc",
+  "metrics": {
+    "task": "classification",
+    "accuracy": 0.383333,
+    "f1_weighted": 0.383162,
+    "precision_weighted": 0.383204,
+    "recall_weighted": 0.383333,
+    "confusion_matrix": [
+      [
+        12,
+        18
+      ],
+      [
+        19,
+        11
+      ]
+    ]
+  },
+  "config": {
+    "data": {
+      "filepath": "data/sample.csv",
+      "target_col": "target"
+    },
+    "pipeline": {
+      "steps": [
+        {
+          "type": "drop_columns",
+          "cols": [
+            "id"
+          ]
+        },
+        {
+          "type": "mean_impute",
+          "cols": "all_numeric"
+        },
+        {
+          "type": "mode_impute",
+          "cols": "all_categorical"
+        },
+        {
+          "type": "onehot_encode",
+          "cols": [
+            "gender",
+            "category"
+          ]
+        },
+        {
+          "type": "standard_scale",
+          "cols": "all_numeric"
+        }
+      ]
+    },
+    "splitting": {
+      "test_size": 0.2,
+      "val_size": 0.1,
+      "random_seed": 42,
+      "stratify": true
+    },
+    "model": {
+      "type": "logistic_regression",
+      "params": {
+        "C": 0.4576242514859438,
+        "max_iter": 875,
+        "solver": "lbfgs"
+      },
+      "save_path": "outputs/model.joblib"
+    },
+    "evaluation": {
+      "report_path": "outputs/report.json"
+    },
+    "tracking": {
+      "db_path": "outputs/experiments.db",
+      "auto_save": true
+    },
+    "tuning": {
+      "metric": "f1",
+      "direction": "maximize",
+      "n_trials": 20
+    }
+  },
+  "timestamp": "2026-06-12T15:11:06.105026"
+}

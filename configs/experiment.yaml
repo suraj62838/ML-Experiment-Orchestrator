@@ -38,3 +38,13 @@ model:
 # ── Evaluation ────────────────────────────────────────────────────────────────
 evaluation:
   report_path: "outputs/report.json"
+
+# ── Tracking & Tuning ─────────────────────────────────────────────────────────
+tracking:
+  db_path: "outputs/experiments.db"
+  auto_save: true
+
+tuning:
+  metric: "f1"
+  direction: "maximize"
+  n_trials: 20
