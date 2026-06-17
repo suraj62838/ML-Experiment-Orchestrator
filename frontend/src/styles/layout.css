@@ -1,0 +1,47 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   layout.css — Top-level grid: header, sidebar(left), body(center),
+   telemetry(right), footer.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.app-layout {
+  display: grid;
+  grid-template-rows: var(--header-h) 1fr var(--footer-h);
+  grid-template-columns: var(--left-w) 1fr var(--right-w);
+  grid-template-areas:
+    "header  header  header"
+    "left    center  right"
+    "footer  footer  footer";
+  height: 100vh;
+  width: 100vw;
+}
+
+.app-header  { grid-area: header; }
+.app-left    { grid-area: left; }
+.app-center  { grid-area: center; }
+.app-right   { grid-area: right; }
+.app-footer  { grid-area: footer; }
+
+/* ── Shared panel chrome ──────────────────────────────────────────────────── */
+
+.app-left,
+.app-center,
+.app-right {
+  overflow-y: auto;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.app-left {
+  border-right: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+}
+
+.app-center {
+  background: var(--bg-primary);
+  padding: var(--sp-6);
+}
+
+.app-right {
+  border-left: 1px solid var(--border-subtle);
+  background: var(--bg-primary);
+  padding: var(--sp-4);
+}

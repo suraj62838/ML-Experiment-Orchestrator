@@ -8,3 +8,7 @@ pytest>=8.0
 optuna
 tqdm
 tabulate
+fastapi
+uvicorn[standard]
+python-multipart
+scipy

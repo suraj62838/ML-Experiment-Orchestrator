@@ -59,6 +59,15 @@ class ModelRegistry:
             logger.debug("Copying model artifact from %s to %s", src_path, dest_path)
             shutil.copy2(src_path, dest_path)
 
+            # Copy the fitted pipeline engine alongside the model
+            pipeline_src = Path(str(run.model_path).replace("model_", "pipeline_"))
+            if pipeline_src.exists():
+                pipeline_dest = self.registry_dir / "champion_pipeline.joblib"
+                logger.debug("Copying pipeline artifact from %s to %s", pipeline_src, pipeline_dest)
+                shutil.copy2(pipeline_src, pipeline_dest)
+            else:
+                logger.warning("No pipeline artifact found at '%s'; skipping pipeline promotion.", pipeline_src)
+
             # Update database champion flags
             self.tracker.set_champion(run_id)
 

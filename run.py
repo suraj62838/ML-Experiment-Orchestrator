@@ -286,6 +286,10 @@ def run_pipeline(
     else:
         trainer.save(final_model_path)
 
+    # Save the pipeline engine alongside the final model
+    final_pipeline_path = final_model_path.replace("model_", "pipeline_")
+    joblib.dump(engine, final_pipeline_path)
+
     final_config = config.copy()
     final_config["model"] = final_config.get("model", {}).copy()
     final_config["model"]["params"] = best_params

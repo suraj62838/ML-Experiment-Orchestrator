@@ -1,0 +1,158 @@
+/* components.css — Header, footer, modals, and shared component styles */
+
+/* ── Header ───────────────────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-5);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  height: var(--header-h);
+}
+
+.header__brand {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.header__brand span {
+  color: var(--accent-blue);
+}
+
+.header__nav {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: center;
+}
+
+.header__status {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+}
+
+.header__dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-green);
+}
+
+.header__dot--disconnected {
+  background: var(--accent-red);
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────────── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--sp-5);
+  border-top: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  height: var(--footer-h);
+}
+
+/* ── Modal overlay ────────────────────────────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default);
+  width: 480px;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.modal__title {
+  font-size: var(--fs-md);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+}
+
+.modal__close {
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: var(--fs-lg);
+  cursor: pointer;
+  padding: 0;
+}
+
+.modal__close:hover {
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+}
+
+.modal__body {
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.modal__footer {
+  padding: var(--sp-4) var(--sp-5);
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--sp-3);
+}
+
+/* ── Form field ───────────────────────────────────────────────────────────── */
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.form-field__label {
+  font-size: var(--fs-xs);
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Progress bar ─────────────────────────────────────────────────────────── */
+.progress-bar {
+  height: 4px;
+  background: var(--bg-tertiary);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: var(--accent-blue);
+  transition: width 0.3s;
+}
+
+.progress-bar__fill--indeterminate {
+  width: 40%;
+  animation: shimmer 1.2s infinite;
+}

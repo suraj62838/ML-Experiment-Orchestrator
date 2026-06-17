@@ -2362,3 +2362,362 @@
 [2026-06-12 15:12:08] [DEBUG   ] [src.tracking.tracker] Ensuring runs table exists in DB.
 [2026-06-12 15:12:08] [DEBUG   ] [src.tracking.registry] Initializing ModelRegistry at directory: outputs\registry
 [2026-06-12 15:12:08] [DEBUG   ] [src.tracking.tracker] Listing up to 10 runs.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fill_nulls (mean): filled 2 null(s) in numeric columns.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] Cleaning complete. Final shape: (3, 3)
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fill_nulls (median): filled 2 null(s) in numeric columns.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] Cleaning complete. Final shape: (3, 3)
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fill_nulls (mode): filled 2 null(s) across all columns.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] Cleaning complete. Final shape: (3, 3)
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fill_nulls (drop): dropped 2 row(s) containing nulls.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] Cleaning complete. Final shape: (1, 3)
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fill_nulls (mean): filled 1 null(s) in numeric columns.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] Cleaning complete. Final shape: (3, 2)
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] drop_duplicates: removed 1 duplicate row(s).
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fill_nulls: no null values found — nothing to fill.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] Cleaning complete. Final shape: (2, 3)
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fill_nulls: no null values found — nothing to fill.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] Cleaning complete. Final shape: (3, 3)
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fix_dtypes: coerced columns to numeric: ['a'].
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fill_nulls: no null values found — nothing to fill.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] Cleaning complete. Final shape: (3, 2)
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fix_dtypes: no object columns needed coercion.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fill_nulls: no null values found — nothing to fill.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] Cleaning complete. Final shape: (3, 2)
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] drop_duplicates: removed 0 duplicate row(s).
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fix_dtypes: no object columns needed coercion.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] fill_nulls (mean): filled 2 null(s) in numeric columns.
+[2026-06-16 15:08:54] [INFO    ] [src.data.cleaner] Cleaning complete. Final shape: (3, 3)
+[2026-06-16 15:08:54] [DEBUG   ] [src.tracking.comparator] Ranking top 3 runs by metric: f1
+[2026-06-16 15:08:54] [DEBUG   ] [src.tracking.comparator] Ranking top 2 runs by metric: accuracy
+[2026-06-16 15:08:54] [DEBUG   ] [src.tracking.comparator] Ranking top 3 runs by metric: rmse
+[2026-06-16 15:08:54] [DEBUG   ] [src.tracking.comparator] Generating side-by-side comparison for runs: ['run_1', 'run_2']
+[2026-06-16 15:08:54] [DEBUG   ] [src.tracking.comparator] Generating summary table for top 3 runs.
+[2026-06-16 15:08:54] [DEBUG   ] [src.tracking.comparator] Selected primary metric for ranking: rmse
+[2026-06-16 15:08:54] [DEBUG   ] [src.tracking.comparator] Ranking top 3 runs by metric: rmse
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep fit: col='gender' categories=['female', 'male', 'other']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] OneHotEncoderStep fitted on 1 column(s): ['gender']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep: encoded 'gender' into 3 indicator column(s).
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep fit: col='gender' categories=['female', 'male', 'other']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] OneHotEncoderStep fitted on 1 column(s): ['gender']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep: encoded 'gender' into 3 indicator column(s).
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep fit: col='gender' categories=['female', 'male', 'other']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] OneHotEncoderStep fitted on 1 column(s): ['gender']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep: encoded 'gender' into 3 indicator column(s).
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] OneHotEncoderStep fitted on 0 column(s): []
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] OneHotEncoderStep fitted on 0 column(s): []
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep fit: col='gender' categories=['female', 'male', 'other']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep fit: col='size' categories=['L', 'M', 'S']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] OneHotEncoderStep fitted on 2 column(s): ['gender', 'size']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep: encoded 'gender' into 3 indicator column(s).
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep: encoded 'size' into 3 indicator column(s).
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep fit: col='gender' categories=['female', 'male', 'other']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] OneHotEncoderStep fitted on 1 column(s): ['gender']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep: encoded 'gender' into 3 indicator column(s).
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] LabelEncoderStep fit: col='gender' mapping={'female': 0, 'male': 1, 'other': 2}
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] LabelEncoderStep fitted on 1 column(s): ['gender']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] LabelEncoderStep: label-encoded column 'gender'.
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] LabelEncoderStep fit: col='size' mapping={'L': 0, 'M': 1, 'S': 2}
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] LabelEncoderStep fitted on 1 column(s): ['size']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] LabelEncoderStep: label-encoded column 'size'.
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] LabelEncoderStep fit: col='size' mapping={'L': 0, 'M': 1, 'S': 2}
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] LabelEncoderStep fitted on 1 column(s): ['size']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] LabelEncoderStep: label-encoded column 'size'.
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] LabelEncoderStep fit: col='gender' mapping={'female': 0, 'male': 1, 'other': 2}
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] LabelEncoderStep fitted on 1 column(s): ['gender']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] LabelEncoderStep: label-encoded column 'gender'.
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] LabelEncoderStep fitted on 0 column(s): []
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] LabelEncoderStep fitted on 0 column(s): []
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] LabelEncoderStep fit: col='gender' mapping={'female': 0, 'male': 1, 'other': 2}
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] LabelEncoderStep fitted on 1 column(s): ['gender']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] LabelEncoderStep: label-encoded column 'gender'.
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] PipelineEngine fitting 4 step(s)…
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.column_ops] DropColumnsStep fitted — will drop: ['id']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.column_ops] DropColumnsStep: dropped 1 column(s): ['id']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] Fit step drop_columns         | (5, 4) -> (5, 3)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.imputers] MeanImputerStep fitted on 2 column(s): ['age', 'score']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.imputers] MeanImputerStep: filled 1 null(s) in 'age' (mean=37.5000)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.imputers] MeanImputerStep: filled 1 null(s) in 'score' (mean=25.0000)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] Fit step mean_impute          | (5, 3) -> (5, 3)
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep fit: col='gender' categories=['female', 'male']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.encoders] OneHotEncoderStep fitted on 1 column(s): ['gender']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep: encoded 'gender' into 2 indicator column(s).
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] Fit step onehot_encode        | (5, 3) -> (5, 4)
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='age' mean=37.5000 std=9.2195
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='score' mean=25.0000 std=10.0000
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='gender_female' mean=0.4000 std=0.4899
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='gender_male' mean=0.6000 std=0.4899
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.scalers] StandardScalerStep fitted on 4 column(s): ['age', 'score', 'gender_female', 'gender_male']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] Fit step standard_scale       | (5, 4) -> (5, 4)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] PipelineEngine fit complete.
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.column_ops] DropColumnsStep: dropped 1 column(s): ['id']
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.engine] Transform step drop_columns         | (5, 4) -> (5, 3)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.imputers] MeanImputerStep: filled 1 null(s) in 'age' (mean=37.5000)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.imputers] MeanImputerStep: filled 1 null(s) in 'score' (mean=25.0000)
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.engine] Transform step mean_impute          | (5, 3) -> (5, 3)
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.encoders] OneHotEncoderStep: encoded 'gender' into 2 indicator column(s).
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.engine] Transform step onehot_encode        | (5, 3) -> (5, 4)
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.engine] Transform step standard_scale       | (5, 4) -> (5, 4)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] PipelineEngine fitting 2 step(s)…
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.imputers] MeanImputerStep fitted on 1 column(s): ['age']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.imputers] MeanImputerStep: filled 1 null(s) in 'age' (mean=37.5000)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] Fit step mean_impute          | (5, 4) -> (5, 4)
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='age' mean=37.5000 std=9.2195
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.scalers] StandardScalerStep fitted on 1 column(s): ['age']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] Fit step standard_scale       | (5, 4) -> (5, 4)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] PipelineEngine fit complete.
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.imputers] MeanImputerStep: filled 1 null(s) in 'age' (mean=37.5000)
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.engine] Transform step mean_impute          | (2, 4) -> (2, 4)
+[2026-06-16 15:08:54] [DEBUG   ] [src.pipeline.engine] Transform step standard_scale       | (2, 4) -> (2, 4)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] PipelineEngine fitting 1 step(s)…
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] PipelineEngine fitting 2 step(s)…
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.column_ops] DropColumnsStep fitted — will drop: ['id']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.column_ops] DropColumnsStep: dropped 1 column(s): ['id']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] Fit step drop_columns         | (5, 4) -> (5, 3)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.imputers] MeanImputerStep fitted on 1 column(s): ['age']
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.steps.imputers] MeanImputerStep: filled 1 null(s) in 'age' (mean=37.5000)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] Fit step mean_impute          | (5, 3) -> (5, 3)
+[2026-06-16 15:08:54] [INFO    ] [src.pipeline.engine] PipelineEngine fit complete.
+[2026-06-16 15:08:54] [INFO    ] [src.data.loader] Loading data from 'C:\Users\Asus\AppData\Local\Temp\pytest-of-Asus\pytest-9\test_load_csv_returns_datafram0\test.csv' (format: .csv)…
+[2026-06-16 15:08:54] [INFO    ] [src.data.loader] Loaded 'test.csv' — shape: (3, 3) | columns: {'a': dtype('int64'), 'b': dtype('float64'), 'target': dtype('int64')}
+[2026-06-16 15:08:55] [INFO    ] [src.data.loader] Loading data from 'C:\Users\Asus\AppData\Local\Temp\pytest-of-Asus\pytest-9\test_load_csv_column_names0\test.csv' (format: .csv)…
+[2026-06-16 15:08:55] [INFO    ] [src.data.loader] Loaded 'test.csv' — shape: (3, 3) | columns: {'a': dtype('int64'), 'b': dtype('float64'), 'target': dtype('int64')}
+[2026-06-16 15:08:55] [INFO    ] [src.data.loader] Loading data from 'C:\Users\Asus\AppData\Local\Temp\pytest-of-Asus\pytest-9\test_load_csv_values0\test.csv' (format: .csv)…
+[2026-06-16 15:08:55] [INFO    ] [src.data.loader] Loaded 'test.csv' — shape: (3, 3) | columns: {'a': dtype('int64'), 'b': dtype('float64'), 'target': dtype('int64')}
+[2026-06-16 15:08:55] [INFO    ] [src.data.loader] Loading data from 'C:\Users\Asus\AppData\Local\Temp\pytest-of-Asus\pytest-9\test_load_json_returns_datafra0\test.json' (format: .json)…
+[2026-06-16 15:08:55] [INFO    ] [src.data.loader] Loaded 'test.json' — shape: (3, 3) | columns: {'a': dtype('int64'), 'b': dtype('int64'), 'target': dtype('int64')}
+[2026-06-16 15:08:55] [INFO    ] [src.data.loader] Loading data from 'C:\Users\Asus\AppData\Local\Temp\pytest-of-Asus\pytest-9\test_load_json_columns0\test.json' (format: .json)…
+[2026-06-16 15:08:55] [INFO    ] [src.data.loader] Loaded 'test.json' — shape: (3, 3) | columns: {'a': dtype('int64'), 'b': dtype('int64'), 'target': dtype('int64')}
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='a' mean=9.7923 std=1.8072
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='b' mean=50.2230 std=9.4889
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] StandardScalerStep fitted on 2 column(s): ['a', 'b']
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='a' mean=9.7923 std=1.8072
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='b' mean=50.2230 std=9.4889
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] StandardScalerStep fitted on 2 column(s): ['a', 'b']
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='a' mean=9.7923 std=1.8072
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='b' mean=50.2230 std=9.4889
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] StandardScalerStep fitted on 2 column(s): ['a', 'b']
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='a' mean=9.7923 std=1.8072
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='b' mean=50.2230 std=9.4889
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] StandardScalerStep fitted on 2 column(s): ['a', 'b']
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='a' mean=5.0000 std=0.0000
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] StandardScalerStep fitted on 1 column(s): ['a']
+[2026-06-16 15:08:55] [WARNING ] [src.pipeline.steps.scalers] StandardScalerStep: col='a' has zero std — column left unchanged.
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='a' mean=9.7923 std=1.8072
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] StandardScalerStep fitted on 1 column(s): ['a']
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='a' mean=9.7923 std=1.8072
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] StandardScalerStep fit: col='b' mean=50.2230 std=9.4889
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] StandardScalerStep fitted on 2 column(s): ['a', 'b']
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] MinMaxScalerStep fit: col='a' min=4.7605 max=13.7046
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] MinMaxScalerStep fit: col='b' min=30.8123 max=77.2017
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] MinMaxScalerStep fitted on 2 column(s): ['a', 'b']
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] MinMaxScalerStep fit: col='a' min=4.7605 max=13.7046
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] MinMaxScalerStep fitted on 1 column(s): ['a']
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] MinMaxScalerStep fit: col='a' min=4.7605 max=13.7046
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] MinMaxScalerStep fit: col='b' min=30.8123 max=77.2017
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] MinMaxScalerStep fitted on 2 column(s): ['a', 'b']
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] MinMaxScalerStep fit: col='a' min=5.0000 max=5.0000
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] MinMaxScalerStep fitted on 1 column(s): ['a']
+[2026-06-16 15:08:55] [WARNING ] [src.pipeline.steps.scalers] MinMaxScalerStep: col='a' has zero range — column set to 0.0.
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] MinMaxScalerStep fit: col='a' min=4.7605 max=13.7046
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] MinMaxScalerStep fit: col='b' min=30.8123 max=77.2017
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] MinMaxScalerStep fitted on 2 column(s): ['a', 'b']
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] MinMaxScalerStep fit: col='a' min=4.7605 max=13.7046
+[2026-06-16 15:08:55] [DEBUG   ] [src.pipeline.steps.scalers] MinMaxScalerStep fit: col='b' min=30.8123 max=77.2017
+[2026-06-16 15:08:55] [INFO    ] [src.pipeline.steps.scalers] MinMaxScalerStep fitted on 2 column(s): ['a', 'b']
+[2026-06-16 15:08:55] [INFO    ] [src.data.splitter] Split complete — train: 70 | val: 10 | test: 20
+[2026-06-16 15:08:55] [INFO    ] [src.data.splitter] Split complete — train: 70 | val: 10 | test: 20
+[2026-06-16 15:08:55] [INFO    ] [src.data.splitter] Split complete — train: 70 | val: 10 | test: 20
+[2026-06-16 15:08:55] [INFO    ] [src.data.splitter] Split complete — train: 70 | val: 10 | test: 20
+[2026-06-16 15:08:55] [INFO    ] [src.data.splitter] Split complete — train: 70 | val: 10 | test: 20
+[2026-06-16 15:08:55] [INFO    ] [src.data.splitter] Split complete — train: 70 | val: 10 | test: 20
+[2026-06-16 15:08:55] [INFO    ] [src.data.splitter] Split complete — train: 70 | val: 10 | test: 20
+[2026-06-16 15:08:55] [INFO    ] [src.data.splitter] Split complete — train: 70 | val: 10 | test: 20
+[2026-06-16 15:08:55] [INFO    ] [src.data.splitter] Split complete — train: 70 | val: 10 | test: 20
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Initializing ExperimentTracker at database path: :memory:
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Ensuring runs table exists in DB.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 2ecd9f67-2b22-49f8-8703-5fb91efbd840 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record 2ecd9f67-2b22-49f8-8703-5fb91efbd840 from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Initializing ExperimentTracker at database path: :memory:
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Ensuring runs table exists in DB.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record non_existent_id from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Initializing ExperimentTracker at database path: :memory:
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Ensuring runs table exists in DB.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record run_1 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record run_2 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Listing up to 50 runs.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Initializing ExperimentTracker at database path: :memory:
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Ensuring runs table exists in DB.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 101cdfb3-9139-41e9-9813-fdfa1e0c3e4c to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record 101cdfb3-9139-41e9-9813-fdfa1e0c3e4c from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Deleting run record 101cdfb3-9139-41e9-9813-fdfa1e0c3e4c from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record 101cdfb3-9139-41e9-9813-fdfa1e0c3e4c from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record 101cdfb3-9139-41e9-9813-fdfa1e0c3e4c from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Initializing ExperimentTracker at database path: :memory:
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Ensuring runs table exists in DB.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record run_1 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record run_2 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Fetching the champion run record.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] No champion run record found.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Promoting run ID run_1 to champion status.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record run_1 from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Successfully updated champion status in database for run run_1.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Fetching the champion run record.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record run_1 from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record run_2 from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Promoting run ID run_2 to champion status.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record run_2 from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Successfully updated champion status in database for run run_2.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Fetching the champion run record.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record run_1 from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Retrieving run record run_2 from database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Initializing ExperimentTracker at database path: :memory:
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Ensuring runs table exists in DB.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Initialized HyperparameterTuner: trials=5, metric=accuracy, direction=maximize
+[2026-06-16 15:08:55] [INFO    ] [src.tuning.tuner] Starting hyperparameter tuning study (5 trials, optimizing 'accuracy' via maximize)...
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 0: Sampled params = {'C': 0.08895938347294133, 'max_iter': 643, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.08895938347294133, 'max_iter': 643, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_0e3b0a45-272c-4ac0-96a2-ccd9803fd2ad.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 0.9, 'f1_weighted': 0.897917, 'precision_weighted': 0.915385, 'recall_weighted': 0.9, 'confusion_matrix': [[7, 2], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 0e3b0a45-272c-4ac0-96a2-ccd9803fd2ad to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 1: Sampled params = {'C': 0.1895872845998391, 'max_iter': 262, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.1895872845998391, 'max_iter': 262, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_3a307893-0a73-4302-979b-6dc1e7ebfae2.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 0.95, 'f1_weighted': 0.949616, 'precision_weighted': 0.954167, 'recall_weighted': 0.95, 'confusion_matrix': [[8, 1], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 3a307893-0a73-4302-979b-6dc1e7ebfae2 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 2: Sampled params = {'C': 0.014214100539898246, 'max_iter': 836, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.014214100539898246, 'max_iter': 836, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_b7cde0ab-4cd7-4260-bb64-dfb6a5a59e70.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 0.85, 'f1_weighted': 0.844, 'precision_weighted': 0.882143, 'recall_weighted': 0.85, 'confusion_matrix': [[6, 3], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record b7cde0ab-4cd7-4260-bb64-dfb6a5a59e70 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 3: Sampled params = {'C': 0.023861963024211473, 'max_iter': 953, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.023861963024211473, 'max_iter': 953, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_179ba3b3-8b0a-4325-9c9f-6068480a3b97.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 0.9, 'f1_weighted': 0.897917, 'precision_weighted': 0.915385, 'recall_weighted': 0.9, 'confusion_matrix': [[7, 2], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 179ba3b3-8b0a-4325-9c9f-6068480a3b97 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 4: Sampled params = {'C': 7.910105628847753, 'max_iter': 751, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 7.910105628847753, 'max_iter': 751, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_234e04c7-a390-41e5-86d3-649031295c6d.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 234e04c7-a390-41e5-86d3-649031295c6d to database.
+[2026-06-16 15:08:55] [INFO    ] [src.tuning.tuner] Tuning study completed. Best trial: #4, value: 1.0, params: {'C': 7.910105628847753, 'max_iter': 751, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Initializing ExperimentTracker at database path: :memory:
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Ensuring runs table exists in DB.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Initialized HyperparameterTuner: trials=10, metric=accuracy, direction=maximize
+[2026-06-16 15:08:55] [INFO    ] [src.tuning.tuner] Starting hyperparameter tuning study (10 trials, optimizing 'accuracy' via maximize)...
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 0: Sampled params = {'C': 0.03571645595912533, 'max_iter': 619, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.03571645595912533, 'max_iter': 619, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_4088d08f-cab4-4901-89d2-ebafc454a573.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 0.9, 'f1_weighted': 0.897917, 'precision_weighted': 0.915385, 'recall_weighted': 0.9, 'confusion_matrix': [[7, 2], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 4088d08f-cab4-4901-89d2-ebafc454a573 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 1: Sampled params = {'C': 1.2761452015198331, 'max_iter': 729, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 1.2761452015198331, 'max_iter': 729, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_c8ae2bbf-f8ed-458b-9050-6ba02de97407.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record c8ae2bbf-f8ed-458b-9050-6ba02de97407 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 2: Sampled params = {'C': 7.321865238844959, 'max_iter': 626, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 7.321865238844959, 'max_iter': 626, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_c84af000-fc45-4903-9313-8b38d7aba7c0.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record c84af000-fc45-4903-9313-8b38d7aba7c0 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 3: Sampled params = {'C': 3.9898600718087054, 'max_iter': 177, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 3.9898600718087054, 'max_iter': 177, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_2e1b0124-ca11-43ce-84a8-d2e15d0fad10.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 2e1b0124-ca11-43ce-84a8-d2e15d0fad10 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 4: Sampled params = {'C': 0.06566108428898679, 'max_iter': 361, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.06566108428898679, 'max_iter': 361, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_767b1f59-8f93-4aac-b9eb-9c86e4d8bb6e.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 0.9, 'f1_weighted': 0.897917, 'precision_weighted': 0.915385, 'recall_weighted': 0.9, 'confusion_matrix': [[7, 2], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 767b1f59-8f93-4aac-b9eb-9c86e4d8bb6e to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 5: Sampled params = {'C': 0.9062974671416326, 'max_iter': 377, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.9062974671416326, 'max_iter': 377, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_68c09803-1f5a-4d5a-8483-db85d419cdb2.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 68c09803-1f5a-4d5a-8483-db85d419cdb2 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 6: Sampled params = {'C': 1.6117836772043377, 'max_iter': 700, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 1.6117836772043377, 'max_iter': 700, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_7f4f9738-1c23-43af-ad3c-c28a537d04eb.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 7f4f9738-1c23-43af-ad3c-c28a537d04eb to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 7: Sampled params = {'C': 3.7715188110471067, 'max_iter': 830, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 3.7715188110471067, 'max_iter': 830, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_d44a33c0-8dfd-4638-af49-9d18a9c06c59.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record d44a33c0-8dfd-4638-af49-9d18a9c06c59 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 8: Sampled params = {'C': 0.9205259132982995, 'max_iter': 660, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.9205259132982995, 'max_iter': 660, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_a69b61d1-6d4f-42ba-9185-415caf0fd790.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record a69b61d1-6d4f-42ba-9185-415caf0fd790 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 9: Sampled params = {'C': 2.1996670185968923, 'max_iter': 160, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 2.1996670185968923, 'max_iter': 160, 'solver': 'lbfgs'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_79d26a7d-074e-40ea-bf61-e0266e16d20c.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 79d26a7d-074e-40ea-bf61-e0266e16d20c to database.
+[2026-06-16 15:08:55] [INFO    ] [src.tuning.tuner] Tuning study completed. Best trial: #1, value: 1.0, params: {'C': 1.2761452015198331, 'max_iter': 729, 'solver': 'lbfgs'}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Initializing ExperimentTracker at database path: :memory:
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Ensuring runs table exists in DB.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Initializing ExperimentTracker at database path: :memory:
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Ensuring runs table exists in DB.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Initialized HyperparameterTuner: trials=4, metric=accuracy, direction=maximize
+[2026-06-16 15:08:55] [INFO    ] [src.tuning.tuner] Starting hyperparameter tuning study (4 trials, optimizing 'accuracy' via maximize)...
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 0: Sampled params = {'C': 0.28930555635128197, 'max_iter': 258, 'solver': 'liblinear'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.28930555635128197, 'max_iter': 258, 'solver': 'liblinear'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_b7259597-96af-4795-bab2-18ec0139650e.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record b7259597-96af-4795-bab2-18ec0139650e to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 1: Sampled params = {'C': 0.4423703445160447, 'max_iter': 331, 'solver': 'liblinear'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.4423703445160447, 'max_iter': 331, 'solver': 'liblinear'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_7fc4548e-17e9-456f-8fff-ee33c135d0b5.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 1.0, 'f1_weighted': 1.0, 'precision_weighted': 1.0, 'recall_weighted': 1.0, 'confusion_matrix': [[9, 0], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 7fc4548e-17e9-456f-8fff-ee33c135d0b5 to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 2: Sampled params = {'C': 0.010756978802510725, 'max_iter': 812, 'solver': 'liblinear'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.010756978802510725, 'max_iter': 812, 'solver': 'liblinear'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_d5c49589-e67b-42f6-9d65-c657c19b69fe.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 0.95, 'f1_weighted': 0.949616, 'precision_weighted': 0.954167, 'recall_weighted': 0.95, 'confusion_matrix': [[8, 1], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record d5c49589-e67b-42f6-9d65-c657c19b69fe to database.
+[2026-06-16 15:08:55] [DEBUG   ] [src.tuning.tuner] Trial 3: Sampled params = {'C': 0.011809059725988844, 'max_iter': 855, 'solver': 'liblinear'}
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Initialised model: LogisticRegression (params={'C': 0.011809059725988844, 'max_iter': 855, 'solver': 'liblinear'})
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training LogisticRegression on 50 samples…
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Training complete.
+[2026-06-16 15:08:55] [INFO    ] [src.models.trainer] Model saved to 'outputs\model_62797307-780a-4760-b799-d11bafbdf111.joblib'.
+[2026-06-16 15:08:55] [INFO    ] [src.models.evaluator] Evaluation (classification): {'task': 'classification', 'accuracy': 0.95, 'f1_weighted': 0.949616, 'precision_weighted': 0.954167, 'recall_weighted': 0.95, 'confusion_matrix': [[8, 1], [0, 11]]}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Logging run record 62797307-780a-4760-b799-d11bafbdf111 to database.
+[2026-06-16 15:08:55] [INFO    ] [src.tuning.tuner] Tuning study completed. Best trial: #0, value: 1.0, params: {'C': 0.28930555635128197, 'max_iter': 258, 'solver': 'liblinear'}
+[2026-06-16 15:08:55] [DEBUG   ] [src.tracking.tracker] Listing up to 100 runs.
